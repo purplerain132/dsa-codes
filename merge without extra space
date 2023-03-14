@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    int arr1[] = {13 ,17 ,18 ,19 ,20 ,22, 22, 27 ,36 ,39 ,46 ,48 ,50};
+    int arr2[] = {1,35};
+    int n = sizeof(arr1) / sizeof(arr1[0]);
+    int m = sizeof(arr2) / sizeof(arr2[0]);
+    int i = 0;
+    while (i < n) {
+        if (arr1[i] > arr2[0]) {
+            swap(arr1[i], arr2[0]);
+            int t = 0;
+            int k = arr2[0];
+            while (arr2[t + 1] < k && t < m-1) {
+                swap(arr2[t + 1], arr2[t]);
+                t++;
+            }
+        }
+        i++;
+    }
+    for(int l = 0;l < n; ++l){
+        cout<<arr1[l]<<" ";
+    }
+    cout<<endl;
+    for(int l = 0;l < m; ++l){
+        cout<<arr2[l]<<" ";
+    }
+}
